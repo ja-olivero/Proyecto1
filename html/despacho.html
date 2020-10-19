@@ -1,0 +1,126 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/despacho.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Despacho</title>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="nav">
+            
+            <ul>
+                <li><img id="logo" src="../static/logo.png" alt=""></li>
+                <li><a href="/inicio">Inicio</a></li>
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Soporte</a></li>
+                <li><img src="../static/lupa.png" alt=""></li>
+                <li><img src="../static/bolsa.png" alt=""></li>
+            </ul>
+            <div class="dropdown">
+                <button class="dropdown-btn"><img src="../static/menu.png" alt=""></button>
+                <div class="dropdown-content">
+                    <a href="/inicio">Inicio</a>
+                    <a href="#">Explorar</a>
+                    <a href="#">Soporte</a>
+                    <a href="/armar">Armar</a>
+                    <a href="/comprar">Comprar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor"></div>
+
+            <div class="titulo">
+                <h1 >Formulario de despacho</h1>
+            </div>
+        
+            <form id="form-despacho" class="despachar" action="/finalizar/" method="post">
+                <div class="form-row">
+                  <div class="form-group col-md-6" >
+                    <label for="nom">Nombres *</label>
+                    <input id="nom" required type="text" name="nom" class="form-control" minlength="5" >
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="apellido">Apellidos</label>
+                    <input id="apellido" required type="text" name="apellido" class="form-control"  minlength="5">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input required type="email" name="mail" class="form-control" id="email" placeholder="ejemplo@dominio.cl">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="tel">Teléfono</label>
+                    <input required type="number" name="tel" class="form-control" id="tel" minlength="9" maxlength="9">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">Dirección</label>
+                  <input type="text" name="direc" class="form-control" id="inputAddress" placeholder="Calle ejemplo 123">
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Tipo de residencia</label>
+                  <input type="text" class="form-control" name="tipore" id="inputAddress2" placeholder="Departamento, estudio, casa o piso" minlength="4" maxlength="13">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Ciudad</label>
+                    <input required type="text" name="ciudad" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Región</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Metropolitana de Santiago</option>
+                      <option>Arica, Parinacota y Tarapacá</option>
+                      <option>Antofagasta</option>
+                      <option>Atacama y Coquimbo</option>
+                      <option>Valparaíso</option>
+                      <option>O'Higgins</option>
+                      <option>Maule</option>
+                      <option>Ñuble, Bío bío y La Araucanía(norte)</option>
+                      <option>La Araucanía(sur)</option>
+                      <option>Los Ríos y Los Lagos(norte)</option>
+                      <option>Los Lagos(sur) y Aysén</option>
+                      <option>Magallanes</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="number" class="form-control" name="zip" id="inputZip" minlength="3" maxlength="3">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Recibir notificaciones en mi correo
+                    </label>
+                  </div>
+                </div>
+                <div class="finalizar">
+                  <button type="submit" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="pie">
+            <p>Mesa Central: 99 9 9999 9999 <br> Dirección: Av. Lorem ipsum #999</p>
+        </div>
+
+    </div>
+
+    <script src="../static/validar.js"></script>
+
+</body>
+</html>
